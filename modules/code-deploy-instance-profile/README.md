@@ -7,7 +7,7 @@ to deploy apps to those instances.
 # Usage
 
 ```terraform
-module "my_code_deploy_instance_prodfile" {
+module "my_code_deploy_instance_profile" {
   source = "github.com/code87/tf-aws-devtools//modules/code-deploy-instance-profile?ref=v0.0.1"
 
   name_prefix = "myproject-staging"
