@@ -5,7 +5,6 @@
 Initial release of the following modules:
 * `codepipeline`
 * `codepipeline-s3-bucket`
-* `github-source`
 * `codebuild`
 * `codedeploy`
 * `codedeploy-instance-profile`

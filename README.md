@@ -6,7 +6,6 @@ Useful Terraform modules to create CI/CD pipelines with AWS Developer Tools.
 
 * [codepipeline](modules/codepipeline/README.md)
 * [codepipeline-s3-bucket](modules/codepipeline-s3-bucket/README.md)
-* [github-source](modules/github-source/README.md)
 * [codebuild](modules/codebuild/README.md)
 * [codedeploy](modules/codedeploy/README.md)
 * [codedeploy-instance-profile](modules/codedeploy-instance-profile/README.md)
