@@ -1,10 +1,10 @@
-resource "aws_iam_instance_profile" "code_deploy_instance_profile" {
-  name = "${var.name_prefix}-code-deploy-instance-profile"
-  role = aws_iam_role.code_deploy_instance_role.name
+resource "aws_iam_instance_profile" "codedeploy_instance_profile" {
+  name = "${var.name_prefix}-codedeploy-instance-profile"
+  role = aws_iam_role.codedeploy_instance_role.name
 }
 
-resource "aws_iam_role" "code_deploy_instance_role" {
-  name = "${var.name_prefix}-code-deploy-instance-role"
+resource "aws_iam_role" "codedeploy_instance_role" {
+  name = "${var.name_prefix}-codedeploy-instance-role"
 
   assume_role_policy = <<-EOF
     {
@@ -23,14 +23,14 @@ resource "aws_iam_role" "code_deploy_instance_role" {
   EOF
 }
 
-resource "aws_kms_grant" "code_deploy_kms_grant" {
+resource "aws_kms_grant" "codedeploy_kms_grant" {
   key_id            = data.aws_kms_key.kms_key.id
-  grantee_principal = aws_iam_role.code_deploy_instance_role.arn
+  grantee_principal = aws_iam_role.codedeploy_instance_role.arn
   operations        = ["Decrypt", "DescribeKey"]
 }
 
-resource "aws_iam_role_policy" "code_deploy_instance_role_policy" {
-  role = aws_iam_role.code_deploy_instance_role.id
+resource "aws_iam_role_policy" "codedeploy_instance_role_policy" {
+  role = aws_iam_role.codedeploy_instance_role.id
 
   policy = <<-POLICY
     {
@@ -69,10 +69,10 @@ resource "aws_iam_role_policy" "code_deploy_instance_role_policy" {
 
 resource "aws_iam_role_policy_attachment" "AmazonSSMManagedInstanceCore" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
-  role       = aws_iam_role.code_deploy_instance_role.name
+  role       = aws_iam_role.codedeploy_instance_role.name
 }
 
 resource "aws_iam_role_policy_attachment" "AmazonEC2ContainerRegistryPowerUser" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser"
-  role       = aws_iam_role.code_deploy_instance_role.name
+  role       = aws_iam_role.codedeploy_instance_role.name
 }

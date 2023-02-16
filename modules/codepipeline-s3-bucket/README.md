@@ -6,8 +6,8 @@ Terraform module that creates S3 bucket to be used by AWS CodePipeline.
 # Usage
 
 ```terraform
-module "my_code_pipeline_s3_bucket" {
-  source = "github.com/code87/tf-aws-devtools//modules/code-pipeline-s3-bucket?ref=v0.0.1"
+module "my_codepipeline_s3_bucket" {
+  source = "github.com/code87/tf-aws-devtools//modules/codepipeline-s3-bucket?ref=v0.0.1"
 
   name_prefix = "myproject-staging"
 }
@@ -24,10 +24,10 @@ module "my_code_pipeline_s3_bucket" {
 
 # Resources
 
-| Name                          | Type                |
-|-------------------------------|---------------------|
-| `code_pipeline_s3_bucket`     | `aws_s3_bucket`     |
-| `code_pipeline_s3_bucket_acl` | `aws_s3_bucket_acl` |
+| Name                         | Type                |
+|------------------------------|---------------------|
+| `codepipeline_s3_bucket`     | `aws_s3_bucket`     |
+| `codepipeline_s3_bucket_acl` | `aws_s3_bucket_acl` |
 
 
 # Inputs
@@ -43,4 +43,3 @@ module "my_code_pipeline_s3_bucket" {
 |------------------|---------------------------|
 | `s3_bucket_arn`  | ARN of created S3 Bucket  |
 | `s3_bucket_name` | Name of created S3 Bucket |
-

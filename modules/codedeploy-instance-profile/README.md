@@ -7,8 +7,8 @@ to deploy apps to those instances.
 # Usage
 
 ```terraform
-module "my_code_deploy_instance_profile" {
-  source = "github.com/code87/tf-aws-devtools//modules/code-deploy-instance-profile?ref=v0.0.1"
+module "my_codedeploy_instance_profile" {
+  source = "github.com/code87/tf-aws-devtools//modules/codedeploy-instance-profile?ref=v0.0.1"
 
   name_prefix = "myproject-staging"
   env_secret  = "myproject/staging/Env"
@@ -29,10 +29,10 @@ module "my_code_deploy_instance_profile" {
 
 | Name                                  | Type                             |
 |---------------------------------------|----------------------------------|
-| `code_deploy_instance_profile`        | `aws_iam_instance_profile`       |
-| `code_deploy_instance_role`           | `aws_iam_role`                   |
-| `code_deploy_kms_grant`               | `aws_kms_grant`                  |
-| `code_deploy_instance_role_policy`    | `aws_iam_role_policy`            |
+| `codedeploy_instance_profile`         | `aws_iam_instance_profile`       |
+| `codedeploy_instance_role`            | `aws_iam_role`                   |
+| `codedeploy_kms_grant`                | `aws_kms_grant`                  |
+| `codedeploy_instance_role_policy`     | `aws_iam_role_policy`            |
 | `AmazonSSMManagedInstanceCore`        | `aws_iam_role_policy_attachment` |
 | `AmazonEC2ContainerRegistryPowerUser` | `aws_iam_role_policy_attachment` |
 
