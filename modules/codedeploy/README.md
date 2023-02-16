@@ -11,7 +11,7 @@ This module only supports EC2 deployments (ECS is not supported _yet_).
 
 ```terraform
 module "my_codedeploy" {
-  source = "github.com/code87/tf-aws-devtools//modules/code-deploy?ref=v0.0.1"
+  source = "github.com/code87/tf-aws-devtools//modules/codedeploy?ref=v0.0.1"
 
   name_prefix              = "myproject-staging"
   deployment_config        = "CodeDeployDefault.AllAtOnce"
