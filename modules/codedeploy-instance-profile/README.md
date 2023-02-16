@@ -39,15 +39,16 @@ module "my_codedeploy_instance_profile" {
 
 # Inputs
 
-| Name          | Description                                                                                                                       | Type     | Default | Required |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------|----------|---------|----------|
-| `name_prefix` | Prefix to prepend resource names. Example: `myproject-staging`                                                                    | `string` |         | yes      |
-| `env_secret`  | Name of AWS Secrets Manager secret that contains environment variables for app build and deploy. Example: `myproject/staging/Env` | `string` |         | yes      |
-| `kms_key`     | Alias for KMS custom-managed key that is used for environment secret encryption. Example: `myproject-staging`                     | `string` |         | yes      |
+* `name_prefix` (required, `string`) - prefix to prepend resource names.<br/>
+  Example: `myproject-staging`
+
+* `env_secret` (required, `string`) - name of AWS Secrets Manager secret that contains environment variables for app build and deploy.<br/>
+  Example: `myproject/staging/Env`
+
+* `kms_key` (required, `string`) - alias for KMS custom-managed key that is used for environment secret encryption.<br/>
+  Example: `myproject-staging`
 
 
 # Outputs
 
-| Name                    | Description                       |
-|-------------------------|-----------------------------------|
-| `instance_profile_name` | Created IAM Instance Profile name |
+* `instance_profile_name` - name of created IAM Instance Profile

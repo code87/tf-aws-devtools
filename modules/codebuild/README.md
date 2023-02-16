@@ -19,31 +19,31 @@ module "my_codebuild_project" {
   kms_key         = "myproject-staging"
 
   build_env_vars = [
-    tomap({
+    {
       name  = "AWS_ACCOUNT_ID",
       value = data.aws_caller_identity.current.account_id,
       type  = "PLAINTEXT"
-    }),
-    tomap({
+    },
+    {
       name  = "AWS_REGION",
       value = data.aws_region.current.name,
       type  = "PLAINTEXT"
-    }),
-    tomap({
+    },
+    {
       name  = "ENV_SECRET",
       value = "myproject/staging/Env",
       type  = "PLAINTEXT"
-    }),
-    tomap({
+    },
+    {
       name  = "DOCKER_IMAGE_NAME",
       value = "myproject",
       type  = "PLAINTEXT"
-    }),
-    tomap({
+    },
+    {
       name  = "BUILD_KEY",
       value = "myproject/staging/Env:BUILD_KEY",
       type  = "SECRETS_MANAGER"
-    })
+    }
   ]
 }
 ```
@@ -89,7 +89,7 @@ module "my_codebuild_project" {
 * `privileged_mode` (optional, `bool`) - indicates whether to enable running the Docker daemon inside a Docker container.<br/>
   Default: `false`
 
-* `build_env_vars` (optional, `list({ "name" = name, value = "value", type = "type"})`) - list of environment variables to pass to build project.
+* `build_env_vars` (optional, `list(object({name = string, value = string, type = string}))`) - list of environment variables to pass to build project.
   _See usage example above_.<br/>
   Default: `[]`
 
@@ -100,3 +100,9 @@ module "my_codebuild_project" {
 # Outputs
 
 *  `project_name` - name of created CodeBuild project
+
+
+# TODO
+
+* make `PLAINTEXT` default `type` of `build_env_vars` object, improve variable documentation
+* better document `compute_type`, `image` and `type` variables

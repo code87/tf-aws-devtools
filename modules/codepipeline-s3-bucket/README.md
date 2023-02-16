@@ -32,14 +32,12 @@ module "my_codepipeline_s3_bucket" {
 
 # Inputs
 
-| Name          | Description                                                    | Type     | Default | Required |
-|---------------|----------------------------------------------------------------|----------|---------|----------|
-| `name_prefix` | Prefix to prepend resource names. Example: `myproject-staging` | `string` |         | yes      |
+* `name_prefix` (required, `string`) - prefix to prepend resource names.<br/>
+  Example: `myproject-staging`
 
 
 # Outputs
 
-| Name             | Description               |
-|------------------|---------------------------|
-| `s3_bucket_arn`  | ARN of created S3 Bucket  |
-| `s3_bucket_name` | Name of created S3 Bucket |
+* `s3_bucket_arn` - ARN of created S3 Bucket
+
+* `s3_bucket_name` - name of created S3 Bucket

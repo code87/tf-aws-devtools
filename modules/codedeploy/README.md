@@ -41,17 +41,23 @@ module "my_codedeploy" {
 
 # Inputs
 
-| Name                       | Description                                                    | Type     | Default | Required |
-|----------------------------|----------------------------------------------------------------|----------|---------|----------|
-| `name_prefix`              | Prefix to prepend resource names. Example: `myproject-staging` | `string` |         | yes      |
-| `deployment_config`        | A set of rules and success and failure conditions used by CodeDeploy during a deployment. Values: `CodeDeployDefault.AllAtOnce`, `CodeDeployDefault.HalfAtATime`, `CodeDeployDefault.OneAtATime` | `string` | `CodeDeployDefault.AllAtOnce` | no      |
-| `deployment_type`          | Indicates whether to run an in-place deployment or a blue/green deployment. Values: `IN_PLACE`, `BLUE_GREEN` | `string` | `IN_PLACE`        | no      |
-| `ec2_instance_name_filter` | A filter to determine the names of EC2 Instances to deploy to. Example: `myproject-staging` | `string` |         | yes      |
+* `name_prefix` (required, `string`) - prefix to prepend resource names.<br/>
+  Example: `myproject-staging`
+
+* `deployment_config` (optional, `string`) - a set of rules and success and failure conditions used by CodeDeploy during a deployment. Values:
+  * `CodeDeployDefault.AllAtOnce` (default)
+  * `CodeDeployDefault.HalfAtATime`
+  * `CodeDeployDefault.OneAtATime`
+
+* `deployment_type` (optional, `string`) - indicates whether to run an in-place deployment or a blue/green deployment.
+  Values: `IN_PLACE` (default), `BLUE_GREEN`.
+
+* `ec2_instance_name_filter` (required, `string`) - a filter to determine the names of EC2 Instances to deploy to.<br/>
+  Example: `myproject-staging`
 
 
 # Outputs
 
-| Name                    | Description                      |
-|-------------------------|----------------------------------|
-| `app_name`              | CodeDeploy application name      |
-| `deployment_group_name` | CodeDeploy deployment group name |
+* `app_name` - CodeDeploy application name
+
+* `deployment_group_name` - CodeDeploy deployment group name
