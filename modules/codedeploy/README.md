@@ -1,5 +1,7 @@
 # CodeDeploy
 
+Current version: `v0.0.1`
+
 Terraform module that creates AWS CodeDeploy resources to be used by AWS CodePipeline:
 * CodeDeploy application
 * CodeDeploy deployment group

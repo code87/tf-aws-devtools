@@ -1,5 +1,7 @@
 # CodePipeline S3 Bucket
 
+Current version: `v0.0.1`
+
 Terraform module that creates S3 bucket to be used by AWS CodePipeline.
 
 

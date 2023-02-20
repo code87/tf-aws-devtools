@@ -1,5 +1,7 @@
 # CodeBuild
 
+Current version: `v0.0.1`
+
 Terraform module that creates AWS CodeBuild Project to work with AWS CodePipeline.
 
 

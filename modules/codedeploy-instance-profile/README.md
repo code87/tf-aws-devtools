@@ -1,5 +1,7 @@
 # CodeDeploy Instance Profile
 
+Current version: `v0.0.1`
+
 Terraform module that creates IAM Instance Profile for EC2 Instances which allows AWS CodeDeploy
 to deploy apps to those instances.
 
