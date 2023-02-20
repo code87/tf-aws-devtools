@@ -20,29 +20,29 @@ module "my_codebuild_project" {
 
   build_env_vars = [
     {
-      name  = "AWS_ACCOUNT_ID",
-      value = data.aws_caller_identity.current.account_id,
-      type  = "PLAINTEXT"
+      var_name  = "AWS_ACCOUNT_ID"
+      var_value = data.aws_caller_identity.current.account_id
+      var_type  = "PLAINTEXT"
     },
     {
-      name  = "AWS_REGION",
-      value = data.aws_region.current.name,
-      type  = "PLAINTEXT"
+      var_name  = "AWS_REGION"
+      var_value = data.aws_region.current.name
+      var_type  = "PLAINTEXT"
     },
     {
-      name  = "ENV_SECRET",
-      value = "myproject/staging/Env",
-      type  = "PLAINTEXT"
+      var_name  = "ENV_SECRET"
+      var_value = "myproject/staging/Env"
+      var_type  = "PLAINTEXT"
     },
     {
-      name  = "DOCKER_IMAGE_NAME",
-      value = "myproject",
-      type  = "PLAINTEXT"
+      var_name  = "DOCKER_IMAGE_NAME"
+      var_value = "myproject"
+      var_type  = "PLAINTEXT"
     },
     {
-      name  = "BUILD_KEY",
-      value = "myproject/staging/Env:BUILD_KEY",
-      type  = "SECRETS_MANAGER"
+      var_name  = "BUILD_KEY"
+      var_value = "myproject/staging/Env:BUILD_KEY"
+      var_type  = "SECRETS_MANAGER"
     }
   ]
 }
@@ -89,7 +89,7 @@ module "my_codebuild_project" {
 * `privileged_mode` (optional, `bool`) - indicates whether to enable running the Docker daemon inside a Docker container.<br/>
   Default: `false`
 
-* `build_env_vars` (optional, `list(object({name = string, value = string, type = string}))`) - list of environment variables to pass to build project.
+* `build_env_vars` (optional, `list(object({var_name = string, var_value = string, var_type = string}))`) - list of environment variables to pass to build project.
   _See usage example above_.<br/>
   Default: `[]`
 

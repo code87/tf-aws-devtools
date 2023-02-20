@@ -41,9 +41,9 @@ variable "privileged_mode" {
 variable "build_env_vars" {
   description = "List of environment variables to pass to build project"
   type = list(object({
-    name  = string
-    value = string
-    type  = string
+    var_name  = string
+    var_value = string
+    var_type  = string
   }))
   default = []
 }

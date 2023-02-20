@@ -24,9 +24,9 @@ resource "aws_codebuild_project" "codebuild_project" {
       for_each = var.build_env_vars
 
       content {
-        name  = environment_variable.name
-        value = environment_variable.value
-        type  = environment_variable.type
+        name  = environment_variable.var_name
+        value = environment_variable.var_value
+        type  = environment_variable.var_type
       }
     }
   }
