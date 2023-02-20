@@ -1,6 +1,6 @@
 # Changelog
 
-## v0.0.1 (Feb 16 2023)
+## v0.0.1 (Feb 20 2023)
 
 Initial release of the following modules:
 * `codepipeline`
